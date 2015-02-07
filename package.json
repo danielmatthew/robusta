@@ -1,0 +1,16 @@
+{
+  "name": "coffee-app",
+  "version": "0.0.0",
+  "description": "Social network revolving around coffee",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Matthew",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.11.2",
+    "mongoose": "~3.8.23",
+    "body-parser": "~1.11.0"
+  }
+}
