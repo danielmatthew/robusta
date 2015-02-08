@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var Coffee = require('./models/coffee');
+var Bean = require('./models/beans');
 
 // Connect to MongoDB
 mongoose.connect('mongodb://coffee_user:FCj4avfZG2rT@ds039291.mongolab.com:39291/coffee');
@@ -46,6 +47,31 @@ router.route('/coffees')
 //   .put()
 //   .get()
 //   .delete();
+
+router.route('/beans')
+  .post(function(req, res) {
+    var bean = new Bean();
+    bean.farm = req.body.farm;
+    bean.process = req.body.process;
+    bean.varietal = req.body.varietal;
+    bean.notes = req.body.notes;
+
+    bean.save(function(err) {
+      if (err) res.send(err);
+
+      res.json({
+        message: 'Bean saved'
+      });
+    });
+  })
+
+  .get(function(req, res) {
+    Bean.find(function(err, beans) {
+      if (err) res.send(err);
+
+      res.json(beans);
+    });
+  });
 
 app.use('/api', router);
 

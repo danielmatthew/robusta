@@ -7,4 +7,4 @@ var BeanSchema = new mongoose.Schema({
     notes: String
 });
 
-module.exports = mongoose.model('Beans', BeanSchema);
+module.exports = mongoose.model('Bean', BeanSchema);
