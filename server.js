@@ -16,10 +16,22 @@ var app = express();
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,\Authorization');
+  next();
+});
+
 var router = express.Router();
+
+router.use(function(req, res, next) {
+  console.log(req.method, req.url);
+  next();
+})
+
 router.route('/coffees')
   .post(function(req, res) {
     var coffee = new Coffee();
