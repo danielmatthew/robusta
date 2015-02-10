@@ -1,0 +1,31 @@
+<h1>Coffees</h1>
+  <a href="/coffees/new" class="btn btn-default">
+    New coffee
+  </a>
+</h1>
+
+<div class="jumbotron text-center" ng-show="user.processing">
+  <span class="spinner"></span>
+  <p>Loading coffees</p>
+</div>
+
+<table class="table table-bordered table-striped" ng-show="coffee.coffees">
+  <thead>
+    <tr>
+      <th>_id</th>
+      <th>Name</th>
+      <th class="col-sm-2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="coffee in coffee.coffees">
+      <td>{{coffee._id}}</td>
+      <td>{{coffee.name}}</td>
+      <td>{{coffee.}}</td>
+      <td class="col-sm-2">
+        <a ng-href="/coffees/{{coffee._id}}" class="btn btn-danger">Edit</a>
+      </td>
+    </tr>
+</tbody>
+</table>
