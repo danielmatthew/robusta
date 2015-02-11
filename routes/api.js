@@ -1,5 +1,6 @@
 var Coffee = require('../models/coffee');
 var Bean = require('../models/beans');
+var User = require('../models/user');
 
 module.exports = function(app, express) {
   var router = express.Router();
@@ -54,6 +55,30 @@ module.exports = function(app, express) {
         if (err) res.send(err);
 
         res.json(beans);
+      });
+    });
+
+  router.route('/users')
+    .post(function(req, res) {
+      var user = new User();
+      user.name = req.body.name;
+      user.username = req.body.username;
+      user.password = req.body.password;
+
+      user.save(function(err) {
+        if (err) res.send(err);
+
+        res.json({
+          message: 'User saved'
+        });
+      });
+    })
+
+    .get(function(req, res) {
+      User.find(function(err, users) {
+        if (err) res.send(err);
+
+        res.json(users);
       });
     });
 
