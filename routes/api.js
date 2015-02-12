@@ -68,7 +68,7 @@ module.exports = function(app, express) {
       return res.status(403).send({
         success: false,
         message: 'No token provided'
-      })l
+      });
     }
   });
 
@@ -107,7 +107,7 @@ module.exports = function(app, express) {
       res.send(req.decoded);
     });
     return router;
-};
+
 
   router.route('/users/:user_id')
     .get(function(req, res) {
@@ -198,4 +198,6 @@ module.exports = function(app, express) {
     });
 
     return router;
-  };
+
+  return router;
+};
