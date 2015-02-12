@@ -33,43 +33,6 @@ app.use(express.static(__dirname + '/public'));
 var apiRoutes = require('./routes/api')(app, express);
 app.use('/api', apiRoutes);
 
-apiRoutes.post('/authenticate', function(req, res) {
-  User.findOne({
-    username: req.body.username
-  }).select('name username password').exec(function(err, user) {
-    if (err) throw err;
-
-    if (!user) {
-      res.json({
-        success: false,
-        message: 'Authentication failed'
-      });
-    } else if (user) {
-      var validPassword = user.comparePassword(req.body.password);
-
-      if (!validPassword) {
-        res.json({
-          success: false,
-          message: 'Auth failed. Wrong password'
-        });
-      } else {
-        var token = jwt.sign({
-          name: user.name,
-          username: user.username
-        }, config.secret, {
-          expiresInMinutes: 1440
-        });
-
-        res.json({
-          success: true,
-          message: 'Token lol',
-          token: token
-        });
-      }
-    }
-  });
-});
-
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/views/index.html'));
 });
