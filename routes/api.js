@@ -102,13 +102,6 @@ module.exports = function(app, express) {
       });
     });
 
-
-    router.get('/me', function(req, res) {
-      res.send(req.decoded);
-    });
-    return router;
-
-
   router.route('/users/:user_id')
     .get(function(req, res) {
       User.findById(req.params.user_id, function(err, user) {
@@ -197,7 +190,9 @@ module.exports = function(app, express) {
       });
     });
 
-    return router;
+    router.get('/me', function(req, res) {
+      res.send(req.decoded);
+    });
 
   return router;
 };

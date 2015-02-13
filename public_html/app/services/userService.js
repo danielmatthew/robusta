@@ -1,7 +1,7 @@
 angular.module('userService', [])
   .factory('User', function($http) {
 
-    var userFac = {};
+    var userFactory = {};
 
     // Get single coffee
     userFactory.get = function(id) {
