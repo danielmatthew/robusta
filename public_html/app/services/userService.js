@@ -1,32 +1,32 @@
 angular.module('userService', [])
-  .factory('Coffee', function($http) {
-    
-    var coffeeFactory = {};
+  .factory('User', function($http) {
+
+    var userFac = {};
 
     // Get single coffee
-    coffeeFactory.get = function(id) {
-      return $http.get('/api/coffees/' + id);
+    userFactory.get = function(id) {
+      return $http.get('/api/users/' + id);
     };
 
     // Get all coffees
-    coffeeFactory.all = function() {
-      return $http.get('/api/coffees');
+    userFactory.all = function() {
+      return $http.get('/api/users/');
     };
 
     // Create a coffee
-    coffeeFactory.create = function(data) {
-      return $http.post('/api/coffees', data);
+    userFactory.create = function(data) {
+      return $http.post('/api/users/', data);
     };
 
     // Update coffee
-    coffeeFactory.update = function(id, data) {
-      return $http.put('/api/coffees' + id, data);
+    userFactory.update = function(id, data) {
+      return $http.put('/api/users/' + id, data);
     };
 
     // Delete coffee
-    coffeeFactory.delete = function(id) {
-      return $http.delete('/api/coffees' + id);
+    userFactory.delete = function(id) {
+      return $http.delete('/api/users/' + id);
     };
 
-    return coffeeFactory;
+    return userFactory;
   });
