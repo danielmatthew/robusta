@@ -26,12 +26,13 @@ angular.module('mainCtrl', [])
           } else {
             vm.error = data.message;
           }
-          
+
         });
     };
 
     vm.doLogout = function() {
       Auth.logout();
+      vm.user = '';
       $location.path('/login');
     };
   });
