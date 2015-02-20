@@ -27,6 +27,12 @@ angular.module('app.routes', ['ngRoute'])
         templateUrl: 'app/views/pages/users/single.html',
         controller: 'userEditController',
         controllerAs: 'user'
+      })
+
+      .when('/coffees', {
+        templateUrl: 'app/vews/pages/coffees/all.html',
+        controller: 'coffeeController',
+        controllerAs: 'coffee'
       });
 
       $locationProvider.html5Mode(true);

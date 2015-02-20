@@ -4,7 +4,7 @@
   "description": "Social network revolving around coffee",
   "main": "server.js",
   "scripts": {
-    "test": "gulp js"
+    "test": "mocha test"
   },
   "author": "Daniel Matthew",
   "license": "ISC",

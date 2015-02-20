@@ -1,4 +1,4 @@
-angular.module('coffeeCtrl', ['userService'])
+angular.module('coffeeCtrl', ['coffeeService'])
   .controller('coffeeController', function(Coffee) {
     var vm = this;
 
@@ -9,4 +9,4 @@ angular.module('coffeeCtrl', ['userService'])
         vm.processing = false;
         vm.coffees = data;
       });
-  })
+});
