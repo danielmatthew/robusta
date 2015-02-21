@@ -4,7 +4,7 @@
   "description": "Social network revolving around coffee",
   "main": "server.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "gulp js"
   },
   "author": "Daniel Matthew",
   "license": "ISC",
@@ -16,8 +16,8 @@
     "bcrypt-nodejs": "0.0.3"
   },
   "devDependencies": {
-    "gulp-jshint": "~1.9.2",
     "gulp": "~3.8.11",
+    "gulp-jshint": "~1.9.2",
     "gulp-concat": "~2.4.3",
     "gulp-uglify": "~1.1.0"
   }

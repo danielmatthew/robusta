@@ -1,4 +1,12 @@
-angular.module('userApp', ['app.routes', 'authService', 'mainCtrl', 'userCtrl', 'userService'])
+angular.module('userApp', [
+  'app.routes',
+  'authService',
+  'mainCtrl',
+  'userCtrl',
+  'userService',
+  'coffeeCtrl',
+  'coffeeService'
+])
 
 // application configuration to integrate token into requests
 .config(function($httpProvider) {
