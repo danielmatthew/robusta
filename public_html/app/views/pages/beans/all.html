@@ -1,0 +1,14 @@
+<div ng-controller="beanController as bean">
+
+  <h1>Beans</h1>
+
+  <div ng-repeat="i in bean.beans" class="col-md-3 review-item">
+    <ul class="list-unstyled">
+      <li>{{i.notes}}</li>
+      <li>{{i.varietal}}</li>
+      <li>{{i.process}}</li>
+      <li>{{i.farm}}</li>
+    </ul>
+  </div>
+
+</div>

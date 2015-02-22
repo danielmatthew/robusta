@@ -13,27 +13,23 @@
   <script src="app/controllers/userController.js"></script>
   <script src="app/controllers/coffeeController.js"></script>
 
+
   <script src="app/services/authService.js"></script>
   <script src="app/services/userService.js"></script>
   <script src="app/services/coffeeService.js"></script>
+
 
   <script src="app/app.routes.js"></script>
   <script src="app/app.js"></script>
 </head>
 
-<body ng-app="userApp" ng-controller="mainController as main">
+<body ng-app="coffeeApp" ng-controller="coffeeController as coffee">
   <header>
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Angular Routing Example</a>
+          <a class="navbar-brand" href="/">Robusta</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users">Users</a></li>
-          <li><a href="/coffees">Coffees</a></li>
-          <li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
-          <li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
-        </ul>
       </div>
     </nav>
   </header>

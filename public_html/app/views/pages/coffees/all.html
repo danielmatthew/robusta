@@ -1,1 +1,11 @@
-<h1>Coffees</h1>
+<div>
+  <h1>Coffees</h1>
+
+  <div ng-repeat="i in coffee.coffees" class="col-md-3 review-item">
+    <ul class="list-unstyled">
+      <li>{{i.review}}</li>
+      <li>{{i.prepMethod}}</li>
+    </ul>
+  </div>
+
+</div>

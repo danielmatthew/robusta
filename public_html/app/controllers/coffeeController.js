@@ -13,5 +13,13 @@
 
 angular.module('coffeeCtrl', ['coffeeService'])
   .controller('coffeeController', function(Coffee) {
-    console.log('Hi!');
+    var that = this;
+
+    this.data = 'Hello';
+    this.coffees = {};
+
+    Coffee.all()
+      .success(function(data) {
+        that.coffees = data;
+      });
   });
