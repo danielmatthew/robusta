@@ -8,11 +8,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : ['My Application'],
+  app_name : ['Robusta'],
   /**
    * Your New Relic license key.
    */
-  license_key : 'license key here',
+  license_key : 'aaf3e0ce97beba06f39637350cdc1b1d3b9dc2d3',
   logging : {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
