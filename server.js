@@ -1,5 +1,5 @@
 // server.js
-require('newrelic');
+// var newrelic = require('newrelic');
 var config = require('./config');
 var express = require('express');
 var bodyParser = require('body-parser');
