@@ -17,5 +17,7 @@
 angular.module('coffeeApp', [
   'app.routes',
   'coffeeCtrl',
-  'coffeeService'
+  'coffeeService',
+  'beanCtrl',
+  'beanService'
 ]);

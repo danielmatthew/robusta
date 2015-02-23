@@ -2,7 +2,8 @@ angular.module('app.routes', ['ngRoute'])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/views/pages/coffees/all.html'
+        // templateUrl: 'app/views/pages/coffees/all.html'
+        templateUrl: '/'
       });
 
       // .when('/login', {
