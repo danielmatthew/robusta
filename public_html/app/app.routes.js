@@ -6,6 +6,14 @@ angular.module('app.routes', ['ngRoute'])
         templateUrl: '/'
       });
 
+      // .when('/coffees', {
+      //   templateUrl: '/app/views/pages/coffees/all.html'
+      // });
+
+      // .when('/coffees/add' {
+      //   templateUrl: '/app/views/pages/coffees/add.html'
+      // });
+
       // .when('/login', {
       //   templateUrl: 'app/views/pages/login.html',
       //   controller: 'mainController',
