@@ -20,16 +20,20 @@ app.use(function(req, res, next) {
 });
 
 // Connect to MongoDB
-mongoose.connect(config.database);
+mongoose.connect(config.database, config.options);
+var conn = mongoose.connection;
 
-app.use(express.static(__dirname + '/public_html'));
+conn.on('error', console.error.bind(console, 'connection error:'));
+conn.once('open', function() {
+  app.use(express.static(__dirname + '/public_html'));
 
-// Routes
-var apiRoutes = require('./routes/api')(app, express);
-app.use('/api', apiRoutes);
+  // Routes
+  var apiRoutes = require('./routes/api')(app, express);
+  app.use('/api', apiRoutes);
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public_html/app/views/index.html'));
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public_html/app/views/index.html'));
+  });
+
+  app.listen(config.port);
 });
-
-app.listen(config.port);

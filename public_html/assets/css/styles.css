@@ -19,5 +19,9 @@ body {
 .review-item {
   background-color: #fff;
   border: 1px solid #ddd;
-  
+
 }
+.ng-valid {}
+.ng-invalid {}
+.ng-pristine {}
+.ng-dirty {}
