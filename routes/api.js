@@ -190,6 +190,25 @@ module.exports = function(app, express) {
       });
     })
 
+    .put(function(req, res) {
+      Bean.findById(req.params.bean_id, function(err, bean) {
+        if (err) res.send(err);
+
+        if (req.body.farm) bean.farm = req.body.farm;
+        if (req.body.process) bean.process = req.body.process;
+        if (req.body.varietal) bean.varietal = req.body.varietal;
+        if (req.body.notes) bean.notes = req.body.notes;
+
+        bean.save(function(err) {
+          if (err) res.send(err);
+
+          res.json({
+            message: 'Bean updated'
+          });
+        });
+      });
+    })
+
     .delete(function(req, res) {
       Bean.remove({
         _id: req.params.bean_id
@@ -201,6 +220,46 @@ module.exports = function(app, express) {
         });
       });
     });
+
+    router.route('/beans/:bean_id')
+      .get(function(req, res) {
+        Bean.findById(req.params.bean_id, function(err, bean) {
+          if (err) res.send(err);
+
+          res.json(bean);
+        });
+      })
+
+      .put(function(req, res) {
+        Bean.findById(req.params.bean_id, function(err, bean) {
+          if (err) res.send(err);
+
+          if (req.body.farm) bean.farm = req.body.farm;
+          if (req.body.process) bean.process = req.body.process;
+          if (req.body.varietal) bean.varietal = req.body.varietal;
+          if (req.body.notes) bean.notes = req.body.notes;
+
+          bean.save(function(err) {
+            if (err) res.send(err);
+
+            res.json({
+              message: 'Bean updated'
+            });
+          });
+        });
+      })
+
+      .delete(function(req, res) {
+        Bean.remove({
+          _id: req.params.bean_id
+        }, function(err, bean) {
+          if (err) res.send(err);
+
+          res.json({
+            message: 'Bean deleted'
+          });
+        });
+      });
 
     router.get('/me', function(req, res) {
       res.send(req.decoded);

@@ -36,4 +36,29 @@ angular.module('beanCtrl', ['beanService'])
           vm.message = data.message;
         });
     };
+  })
+
+  .controller('beanEditController', function($routeParams, Bean) {
+    var vm = this;
+
+    vm.type = 'edit';
+
+    Bean.get($routeParams.bean_id)
+      .success(function(data) {
+        vm.beanData = data;
+      });
+
+    vm.saveBean = function() {
+      vm.processing = true;
+      vm.message = '';
+
+      Bean.update($routeParams.bean_id, vm.beanData)
+        .success(function(data) {
+          vm.processing = false;
+
+          vm.beanData = {};
+
+          vm.message = data.message;
+        });
+    };
   });

@@ -1,17 +1,26 @@
 <div ng-controller="beanController as bean">
 
+<div class="page-header">
   <h1>Beans</h1>
+    <a href="/beans/add" class="btn btn-default">
+      <span class="glyphicon glyphicon-plus"></span>
+      New Bean
+    </a>
+  </h1>
+</div>
 
   <div ng-repeat="i in bean.beans" class="col-md-4 review-item">
     <dl class="list-unstyled">
-      <dt>Notes:</dt>
-      <dd>{{i.notes}}</dd>
+      <dt ng-if="i.country">Country:</dt>
+      <dd ng-if="i.country">{{i.country}}</dd>
+      <dt>Farm:</dt>
+      <dd>{{i.farm}}</dd>
       <dt>Varietal:</dt>
       <dd>{{i.varietal}}</dd>
       <dt>Process:</dt>
       <dd>{{i.process}}</dd>
-      <dt>Farm:</dt>
-      <dd>{{i.farm}}</dd>
+      <dt>Notes:</dt>
+      <dd>{{i.notes}}</dd>
 
       <a ng-href="/beans/{{i._id}}" class="btn btn-danger">Edit</a>
       <a href="#" ng-click="bean.deleteBean(i._id)" class="btn btn-primary">Delete</a>

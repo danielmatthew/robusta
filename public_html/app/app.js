@@ -19,5 +19,7 @@ angular.module('coffeeApp', [
   'coffeeCtrl',
   'coffeeService',
   'beanCtrl',
-  'beanService'
+  'beanService',
+  'userCtrl',
+  'userService'
 ]);

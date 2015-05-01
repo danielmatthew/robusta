@@ -45,7 +45,7 @@ angular.module('userCtrl', ['userService'])
   .controller('userEditController', function($routeParams, User) {
     var vm = this;
 
-    vm. type = 'edit';
+    vm.type = 'edit';
 
     User.get($routeParams.user_id)
       .success(function(data) {
