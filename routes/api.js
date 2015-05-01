@@ -188,6 +188,18 @@ module.exports = function(app, express) {
 
         res.json(beans);
       });
+    })
+
+    .delete(function(req, res) {
+      Bean.remove({
+        _id: req.params.bean_id
+      }, function(err, user) {
+        if (err) res.send(err);
+
+        res.json({
+          message: 'Bean deleted'
+        });
+      });
     });
 
     router.get('/me', function(req, res) {

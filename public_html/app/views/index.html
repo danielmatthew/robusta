@@ -27,42 +27,21 @@
 
 <body ng-app="coffeeApp">
   <header>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Robusta</a>
+          <a class="navbar-brand" href="/">Coffee</a>
         </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/coffees">Coffees</a></li>
+          <li><a href="/beans">Beans</a></li>
+        </ul>
       </div>
     </nav>
   </header>
 
   <main class="container">
-
-
-    <div ng-controller="coffeeController as coffee" class="row">
-      <h1>Coffees</h1>
-      <div ng-repeat="i in coffee.coffees" class="col-md-3 review-item">
-        <ul class="list-unstyled">
-          <li>{{i.review}}</li>
-          <li>{{i.prepMethod}}</li>
-        </ul>
-      </div>
-    </div>
-
-    <div ng-controller="beanController as bean" class="row">
-
-      <h1>Beans</h1>
-
-      <div ng-repeat="i in bean.beans" class="col-md-3 review-item">
-        <ul class="list-unstyled">
-          <li>{{i.notes}}</li>
-          <li>{{i.varietal}}</li>
-          <li>{{i.process}}</li>
-          <li>{{i.farm}}</li>
-        </ul>
-      </div>
-
-    </div>
+    <div ng-view></div>
   </main>
 
 </body>

@@ -2,13 +2,21 @@
 
   <h1>Beans</h1>
 
-  <div ng-repeat="i in bean.beans" class="col-md-3 review-item">
-    <ul class="list-unstyled">
-      <li>{{i.notes}}</li>
-      <li>{{i.varietal}}</li>
-      <li>{{i.process}}</li>
-      <li>{{i.farm}}</li>
-    </ul>
+  <div ng-repeat="i in bean.beans" class="col-md-4 review-item">
+    <dl class="list-unstyled">
+      <dt>Notes:</dt>
+      <dd>{{i.notes}}</dd>
+      <dt>Varietal:</dt>
+      <dd>{{i.varietal}}</dd>
+      <dt>Process:</dt>
+      <dd>{{i.process}}</dd>
+      <dt>Farm:</dt>
+      <dd>{{i.farm}}</dd>
+
+      <a ng-href="/beans/{{i._id}}" class="btn btn-danger">Edit</a>
+      <a href="#" ng-click="bean.deleteBean(i._id)" class="btn btn-primary">Delete</a>
+
+    </dl>
   </div>
 
 </div>

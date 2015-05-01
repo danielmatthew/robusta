@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1 ng-if="bean.type == 'create'">Create bean</h1>
+  <h1 ng-if="bean.type == 'edit'">Edit bean</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="bean.saveBean()">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Farm</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="bean.beanData.farm">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Process</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="bean.beanData.process">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Varietal</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="bean.beanData.varietal">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Notes</label>
+    <div class="col-sm-6">
+      <textarea type="password" class="form-control" ng-model="bean.beanData.notes"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Add Bean</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" ng-if="bean.type == 'edit'">Edit bean</button>
+    </div>
+  </div>
+</form>
+
+<div class="row show-hide-message" ng-show="bean.message">
+  <div class="col-sm-6 col-sm-offset-2">
+    <div class="alert alert-info">
+      {{bean.message}}
+    </div>
+  </div>
+</div>

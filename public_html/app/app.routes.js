@@ -2,17 +2,27 @@ angular.module('app.routes', ['ngRoute'])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        // templateUrl: 'app/views/pages/coffees/all.html'
-        templateUrl: '/'
+        templateUrl: 'app/views/pages/beans/all.html'
+        // templateUrl: '/'
+      })
+
+      .when('/beans', {
+        templateUrl: 'app/views/pages/beans/all.html'
+      })
+
+      .when('/beans/add', {
+        templateUrl: 'app/views/pages/beans/add.html',
+        controller: 'beanCreateController',
+        controllerAs: 'bean'
+      })
+
+      .when('/coffees', {
+        templateUrl: '/app/views/pages/coffees/all.html'
+      })
+
+      .when('/coffees/add', {
+        templateUrl: '/app/views/pages/coffees/add.html'
       });
-
-      // .when('/coffees', {
-      //   templateUrl: '/app/views/pages/coffees/all.html'
-      // });
-
-      // .when('/coffees/add' {
-      //   templateUrl: '/app/views/pages/coffees/add.html'
-      // });
 
       // .when('/login', {
       //   templateUrl: 'app/views/pages/login.html',
